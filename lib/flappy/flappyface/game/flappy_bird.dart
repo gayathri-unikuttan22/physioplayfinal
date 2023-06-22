@@ -13,6 +13,7 @@ import '../components/bottomtube_component.dart';
 import '../components/toptube_component.dart';
 
 FlappyBird flappyBird = FlappyBird();
+late BirdComponent bird;
 
 class FlappyBird extends FlameGame with HasTappables, HasCollisionDetection {
   bool isGamePaused = true;
@@ -29,6 +30,7 @@ class FlappyBird extends FlameGame with HasTappables, HasCollisionDetection {
     add(BackgroundComponent());
 
     // Bird
+    bird = BirdComponent();
     add(bird);
 
     // Bottomtube , Total Gap is 0.60
@@ -75,7 +77,7 @@ class FlappyBird extends FlameGame with HasTappables, HasCollisionDetection {
     }
   }
 
-  void reset() {
+void reset() {
     score = 0;
     bird.position.y = size[1] / 2;
 
@@ -88,5 +90,11 @@ class FlappyBird extends FlameGame with HasTappables, HasCollisionDetection {
     // Add the inital tubes
     add(ToptubeComponent(0.30));
     add(BottomtubeComponent(0.30));
+  }
+
+  void removeAllExit() {
+    children.forEach((child) {
+      remove(child);
+    });
   }
 }

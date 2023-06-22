@@ -70,6 +70,10 @@ class GameOverMenu extends StatelessWidget {
                       context,
                       MaterialPageRoute(
                           builder: (context) => const games()));
+                      // gameRef.isGamePaused = false;
+                      // gameRef.removeAllExit();
+                      // gameRef.reset();
+                      // Navigator.pop(context);
                     },
                     child: const Text(
                       'Exit',

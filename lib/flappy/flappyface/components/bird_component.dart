@@ -10,8 +10,6 @@ import 'package:flutter_proj/flappy/flappyface/game/flappy_bird.dart';
 
 enum BirdWingsState { up, down }
 
-BirdComponent bird = BirdComponent(); // We use this global variable
-
 class BirdComponent extends SpriteGroupComponent<BirdWingsState>
     with HasGameRef<FlappyBird>, CollisionCallbacks {
   bool wingsDown = true;

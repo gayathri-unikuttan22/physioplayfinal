@@ -15,15 +15,15 @@ class BackgroundComponent extends SpriteComponent
     size = gameRef.size;
   }
 
-  @override
-  bool onTapDown(TapDownInfo info) {
-    try {
-      if (!gameRef.isGamePaused) {
-        bird.y -= 70;
-      }
-      return super.onTapDown(info);
-    } catch (e) {
-      return false;
-    }
-  }
+  // @override
+  // bool onTapDown(TapDownInfo info) {
+  //   try {
+  //     if (!gameRef.isGamePaused) {
+  //       bird.y -= 70;
+  //     }
+  //     return super.onTapDown(info);
+  //   } catch (e) {
+  //     return false;
+  //   }
+  // }
 }
