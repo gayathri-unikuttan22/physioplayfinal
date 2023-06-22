@@ -80,12 +80,13 @@ class GameOverMenu extends StatelessWidget {
                         ),
                       ),
                       onPressed: () {
-                        Get.to(MainMenu(gameRef));
+                        // Get.to(MainMenu(gameRef));
+                        Get.back();
                         gameRef.overlays.remove(GameOverMenu.id);
                         gameRef.overlays.add(MainMenu.id);
                         gameRef.resumeEngine();
                         gameRef.reset();
-                        AudioManager.instance.resumeBgm();
+                        AudioManager.instance.pauseBgm();
                       },
                     ),
                   ],

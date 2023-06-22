@@ -54,22 +54,14 @@ class ScoreScreen extends StatelessWidget {
                   // Navigation logic goes here
                   // You can use Get.to() or Get.off() to navigate to the desired page
                   Get.to(WelcomeScreen());
+                  //  Navigator.pop(context);
                 },
-                child: Container(
-                  width: double.infinity,
-                  alignment: Alignment.center,
-                  padding: const EdgeInsets.all(kDefaultPadding * 0.75), // 15
-                  decoration: const BoxDecoration(
-                    gradient: kPrimaryGradient,
-                    borderRadius: BorderRadius.all(Radius.circular(12)),
-                  ),
-                  child: Text(
-                    "Restart",
-                    style: Theme.of(context)
-                        .textTheme
-                        .headline6
-                        ?.copyWith(color: Colors.black),
-                  ),
+                child: Text(
+                  "Restart",
+                  style: Theme.of(context)
+                      .textTheme
+                      .headline6
+                      ?.copyWith(color: Colors.black),
                 ),
               ),
               SizedBox(height: 32), // Adds some spacing between the elements
@@ -77,27 +69,20 @@ class ScoreScreen extends StatelessWidget {
                 onPressed: () {
                   // Navigation logic goes here
                   // You can use Get.to() or Get.off() to navigate to the desired page
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const games()));
-                  
+                  // Get.back();
+                  // Get.back();
+                  Navigator.pop(context);
+                  Navigator.pop(context);
+                  Navigator.pop(context);
+                  // Get.to(games());
+                  // Get.offNamedUntil('/games', (route) => false);
                 },
-                child: Container(
-                  width: double.infinity,
-                  alignment: Alignment.center,
-                  padding: const EdgeInsets.all(kDefaultPadding * 0.75), // 15
-                  decoration: const BoxDecoration(
-                    gradient: kPrimaryGradient,
-                    borderRadius: BorderRadius.all(Radius.circular(12)),
-                  ),
-                  child: Text(
-                    "Exit",
-                    style: Theme.of(context)
-                        .textTheme
-                        .headline6
-                        ?.copyWith(color: Colors.black),
-                  ),
+                child: Text(
+                  "Exit",
+                  style: Theme.of(context)
+                      .textTheme
+                      .headline6
+                      ?.copyWith(color: Colors.black),
                 ),
               ),
             ],

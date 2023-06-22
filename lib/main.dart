@@ -1,6 +1,7 @@
 import 'package:flame/game.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_proj/flappy/flappyface/components/startmenu_component.dart';
+import 'package:flutter_proj/screens/Games.dart';
 import 'package:flutter_proj/screens/signin_screen.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:flutter_proj/screen_quiz/welcome/welcome_screen.dart';
@@ -48,6 +49,9 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
+      routes: {
+        '/games': (context) => const games(),
+      },
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -59,6 +63,15 @@ class MyApp extends StatelessWidget {
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
         primarySwatch: Colors.blue,
+        fontFamily: 'Audiowide',
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+        // Settings up some default theme for elevated buttons.
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            padding: const EdgeInsets.symmetric(vertical: 10.0),
+            fixedSize: const Size(200, 60),
+          ),
+        ),
       ),
       home: const SignInScreen(),
     );
@@ -66,11 +79,13 @@ class MyApp extends StatelessWidget {
 }
 
 JustDinomain() {
-  runApp(const JustStyle());
+  // runApp(const JustStyle());
+  return JustStyle();
 }
 
 JustFlappymain() {
-  runApp(const FlappyPoseDetection());
+  // runApp(const FlappyPoseDetection());
+  return FlappyPoseDetection();
 }
 
 class JustStyle extends StatelessWidget {
@@ -78,24 +93,24 @@ class JustStyle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-          body: Column(
-        children: [
-          const SizedBox(
-            width: 400,
-            height: 500,
-            child: DinoRunApp(),
-          ),
-          SizedBox(
-            width: 400,
-            height: 340,
-            child: PoseDetectorViewDino(),
-          ),
-        ],
-      )),
-    );
+    // return MaterialApp(
+    //   debugShowCheckedModeBanner: false,
+    //   home:
+    return Scaffold(
+        body: Column(
+      children: [
+        const SizedBox(
+          width: 400,
+          height: 500,
+          child: DinoRunApp(),
+        ),
+        SizedBox(
+          width: 400,
+          height: 340,
+          child: PoseDetectorViewDino(),
+        ),
+      ],
+    ));
   }
 }
 
@@ -104,39 +119,40 @@ class FlappyPoseDetection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-          body: Column(
-        children: [
-          SizedBox(
-            width: 400,
-            height: 500,
-            child: GameWidget(
-              game: FlappyBird(),
-              overlayBuilderMap: {
-                'StartMenu': (BuildContext context, FlappyBird flappyBird) {
-                  return StartMenu(
-                    gameRef: flappyBird,
-                  );
-                },
-                'GameOverMenu': (BuildContext context, FlappyBird flappyBird) {
-                  return GameOverMenu(
-                    gameRef: flappyBird,
-                  );
-                },
-                'InstructionPage': (_, FlappyBird gameRef) => InstructionPage(gameRef),
+    // return MaterialApp(
+    //   debugShowCheckedModeBanner: false,
+    //   home:
+    return Scaffold(
+        body: Column(
+      children: [
+        SizedBox(
+          width: 400,
+          height: 500,
+          child: GameWidget(
+            game: FlappyBird(),
+            overlayBuilderMap: {
+              'StartMenu': (BuildContext context, FlappyBird flappyBird) {
+                return StartMenu(
+                  gameRef: flappyBird,
+                );
               },
-            ),
+              'GameOverMenu': (BuildContext context, FlappyBird flappyBird) {
+                return GameOverMenu(
+                  gameRef: flappyBird,
+                );
+              },
+              'InstructionPage': (_, FlappyBird gameRef) =>
+                  InstructionPage(gameRef),
+            },
           ),
-          const SizedBox(
-            width: 400,
-            height: 340,
-            child: PoseDetectorViewFlappy(),
-          ),
-        ],
-      )),
-    );
+        ),
+        const SizedBox(
+          width: 400,
+          height: 340,
+          child: PoseDetectorViewFlappy(),
+        ),
+      ],
+    ));
   }
 }
 

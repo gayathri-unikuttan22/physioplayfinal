@@ -11,9 +11,10 @@ class QuizScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     QuestionController controller = Get.put(QuestionController());
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
+    // return MaterialApp(
+    //   debugShowCheckedModeBanner: false,
+    //   home: 
+      return Scaffold(
         extendBodyBehindAppBar: true,
         appBar: AppBar(
           // Fluttter show the back button automatically
@@ -25,8 +26,7 @@ class QuizScreen extends StatelessWidget {
           ],
         ),
         body: Body(),
-      ),
-    );
+      );
   }
 }
 
@@ -36,9 +36,10 @@ class front_camera extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
+    // return MaterialApp(
+    //   debugShowCheckedModeBanner: false,
+    //   home: 
+      return Scaffold(
         body: Stack(
           children: [
             const QuizScreen(),
@@ -52,7 +53,6 @@ class front_camera extends StatelessWidget {
             )
           ],
         ),
-      ),
-    );
+      );
   }
 }
