@@ -1,33 +1,41 @@
 {
   "project_info": {
-    "project_number": "1054369347303",
-    "project_id": "physio-signin",
-    "storage_bucket": "physio-signin.appspot.com"
+    "project_number": "607582585272",
+    "project_id": "physioplay-57ff5",
+    "storage_bucket": "physioplay-57ff5.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1054369347303:android:e3970a39ae817d66999442",
+        "mobilesdk_app_id": "1:607582585272:android:b1c8357d638fe934fa0f4d",
         "android_client_info": {
           "package_name": "com.example.flutter_proj"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1054369347303-5sc34cgsp5qqk0j3e96524388pmemfre.apps.googleusercontent.com",
+          "client_id": "607582585272-5dc2t2b0ri8ge9m473gt2si2ro59c9qi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.flutter_proj",
+            "certificate_hash": "53cdc1d296bd4dedf1a4bf0e7e838caf7122bcee"
+          }
+        },
+        {
+          "client_id": "607582585272-ap5pstbneer4oh5e31upfnqr4tpg0ubf.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAa2nqaKGm3xfxDieD5_mllSI3kseq2xJ8"
+          "current_key": "AIzaSyBVlw6ouTryPtndE0KC60AFwcWgO34tpc0"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "1054369347303-5sc34cgsp5qqk0j3e96524388pmemfre.apps.googleusercontent.com",
+              "client_id": "607582585272-ap5pstbneer4oh5e31upfnqr4tpg0ubf.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

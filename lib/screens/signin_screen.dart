@@ -1,12 +1,15 @@
 //import 'dart:html';
-
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter_proj/getx_di.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_proj/screens/dashboard_controller.dart';
 import 'package:flutter_proj/screens/signup_screen.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter_proj/utils/color_utils.dart';
-
+import 'package:get/get_core/get_core.dart';
+import 'package:get/get_instance/get_instance.dart';
 import '../reusable_widgets/reusable.dart';
 import 'home_screen.dart';
 
@@ -20,7 +23,7 @@ class SignInScreen extends StatefulWidget {
 class _SignInScreenState extends State<SignInScreen> {
   final TextEditingController _passwordTextController = TextEditingController();   
   final TextEditingController _emailTextController = TextEditingController();
-
+  final DashboardController dashboardController=Get.find();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
